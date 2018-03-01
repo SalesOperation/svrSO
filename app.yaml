@@ -1,0 +1,18 @@
+runtime: php55
+api_version: 1
+
+handlers:
+- url: /
+  script: svrConsultas.php
+
+- url: /test/.*
+  script: test.php
+  
+- url: /kpilist/.*
+  script: kpilist.php
+  
+- url: /cnl_list/.*
+  script: channels.php
+  
+- url: /db
+  script: dblink.php
