@@ -2,7 +2,8 @@
 	header('Access-Control-Allow-Origin: *');
 	$url = 'http://iteshn.hol.es/server_app/svrConsultasSO.php';
 	// create curl resource 
-        /*$ch = curl_init(); 
+        try{
+             $ch = curl_init(); 
 
         // set url 
         curl_setopt($ch, CURLOPT_URL, $url); 
@@ -15,8 +16,12 @@
         echo $output;
 
         // close curl resource to free up system resources 
-        curl_close($ch);*/
-        echo $url;
+        curl_close($ch);
+        echo $url;   
+        }catch(Exception  $ex){
+               echo $ex;
+        }
+        
 
 ?>
 
