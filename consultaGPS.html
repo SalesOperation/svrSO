@@ -7,13 +7,11 @@
 
 
 </head>
-<body onresize="resizer()">
-
+<body>
+    <div id="result"></div>
 </body>
 
 <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
-<script type="text/javascript" src="cordova.js"></script>
-<script type="text/javascript" src="js/toast.js"></script>
 <script type="text/javascript">  
     //app.initialize();
 
@@ -34,12 +32,6 @@
     $.post('http://iteshn.hol.es/server_app/svrConsultasSO.php', {op:1}, function(data){
          $("body").html(data);
     });
-
-function resizer(){
-
-    $("#bg_login").css('min-height', $(window).height());
-    $("#dvContentG").css('min-height', $(window).height()-45);
-}  
 
 
 </script>
