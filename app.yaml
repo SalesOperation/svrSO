@@ -4,15 +4,3 @@ api_version: 1
 handlers:
 - url: /
   script: consultasGPS.php
-
-- url: /test/.*
-  script: test.php
-  
-- url: /kpilist/.*
-  script: kpilist.php
-  
-- url: /cnl_list/.*
-  script: channels.php
-  
-- url: /db
-  script: dblink.php
