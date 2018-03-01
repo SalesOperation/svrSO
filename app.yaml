@@ -3,7 +3,7 @@ api_version: 1
 
 handlers:
 - url: /
-  script: consultaGPS.html
+  script: consultaGPS.php
 
 - url: /test/.*
   script: test.php
