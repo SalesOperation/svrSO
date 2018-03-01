@@ -27,7 +27,7 @@ try{
 function getLogin($vUser, $vPwd){
 	include 'dblink.php';
 	$vLic = '0';
-	$vPwd = 'na';
+	$vPwd = 'na-';
 
 	if($vResult = $con->query('SELECT * FROM tbl_users where user_id =\'' . $vUser . '\' and password=\''. $vPwd .'\' and state=1')){
 		while($vRow = $vResult->fetch_assoc()){
