@@ -1,15 +1,21 @@
 <?php
 	header('Access-Control-Allow-Origin: *');
-
 	$url = 'http://iteshn.hol.es/server_app/svrConsultasSO.php';
-	$xml = '';
+	// create curl resource 
+        $ch = curl_init(); 
 
-	$request = new HTTPRequest($url, HTTP_METH_POST);
-	$request->setRawPostData($xml);
-	$request->send();
-	$response = $request->getResponseBody();
+        // set url 
+        curl_setopt($ch, CURLOPT_URL, $url); 
 
-	echo $response;
+        //return the transfer as a string 
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+
+        // $output contains the output string 
+        $output = curl_exec($ch); 
+        echo $output;
+
+        // close curl resource to free up system resources 
+        curl_close($ch);
 
 ?>
 
