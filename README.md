@@ -1,2 +1,0 @@
-# svrSO
-Servicios SO htpps
