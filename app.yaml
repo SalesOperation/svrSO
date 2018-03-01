@@ -5,5 +5,5 @@ handlers:
 - url: /
   script: consultasGPS.php
   
-- url:/test/*
-  script: text.php
+- url:/test/.*
+  script: test.php
