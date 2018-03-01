@@ -8,11 +8,15 @@
 
 </head>
 <body>
-    <div id="result"></div>
+<div id="res"></div>
 </body>
 
 <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/toast.js"></script>
 <script type="text/javascript">  
+
+    //document.getElementById("res").innerHTML = "xxx";
     //app.initialize();
 
     /*$.ajax({
@@ -28,11 +32,18 @@
             alert('There was an error adding your comment');
         }
     });*/
+    var theUrl = "http://iteshn.hol.es/server_app/svrConsultasSO.php";
+    var xmlHttp = new XMLHttpRequest();
 
-    $.post('http://iteshn.hol.es/server_app/svrConsultasSO.php', {op:1}, function(data){
-         $("body").html(data);
-    });
+    xmlHttp.onreadystatechange = function(){
+        console.log(xmlHttp);
+        document.getElementById("res").innerHTML = xmlHttp.responseText;
+    };
 
+    xmlHttp.open( "POST", theUrl, false ); // false for synchronous request    
+    //xmlHttp.setRequestHeader('Content-Type', 'application/json')
+    xmlHttp.send(JSON.stringify({op:1}));
+    //document.getElementById("res").innerHTML = xmlHttp.responseText;
 
 </script>
 </html>
