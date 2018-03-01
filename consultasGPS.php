@@ -17,7 +17,6 @@
 
         // close curl resource to free up system resources 
         curl_close($ch);
-        echo $url;   
         }catch(Exception  $ex){
                echo $ex;
         }
